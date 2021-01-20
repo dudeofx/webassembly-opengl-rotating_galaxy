@@ -1,0 +1,18 @@
+<html>
+<body>
+
+    <!-- You wasm program needs a canvas object on the DOM side -->
+    <canvas id="my_canvas" oncontextmenu="event.preventDefault()"></canvas>
+
+    <!-- You make the canvas accessible to your program via the Module object --> 
+    <!-- see docs: https://emscripten.org/docs/api_reference/module.html -->
+    <script type='text/javascript'>
+        var Module = { document.getElementById('my_canvas'); }
+    </script>
+
+    <!-- Inform the DOM to execute your program -->
+    <script src="index.js"></script>  
+
+</body>
+
+</html>
