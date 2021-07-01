@@ -7,7 +7,12 @@
     <!-- You make the canvas accessible to your program via the Module object --> 
     <!-- see docs: https://emscripten.org/docs/api_reference/module.html -->
     <script type='text/javascript'>
-        var Module = { document.getElementById('my_canvas'); }
+       var Module = {
+           canvas: (function() {
+               var canvas = document.getElementById('my_canvas');
+               return canvas;
+               })()
+       };
     </script>
 
     <!-- Inform the DOM to execute your program -->
