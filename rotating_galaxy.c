@@ -81,11 +81,11 @@ int main() {
    emscripten_webgl_init_context_attributes(&attr);
 
    // a context is required to use the WebGL API
-   EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx = emscripten_webgl_create_context("canvas", &attr);
+   EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx = emscripten_webgl_create_context("#my_canvas", &attr);
 
    // binds the WebGL API to the context
    emscripten_webgl_make_context_current(ctx);
-   emscripten_set_canvas_element_size("canvas", 800, 480);
+   emscripten_set_canvas_element_size("#my_canvas", 800, 480);
 
    glViewport(0, 0, 800, 480);
 
